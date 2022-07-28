@@ -1,0 +1,354 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Common Usage Examples &#8212; EDMLib  documentation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/semantic-ui-2.4.1/segment.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/semantic-ui-2.4.1/menu.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/semantic-ui-2.4.1/tab.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom_style.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/contentui.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script type="text/javascript" src="../_static/sphinx_tabs/semantic-ui-2.4.1/tab.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinx_tabs/tabs.js"></script>
+    <script type="text/javascript" src="../_static/custom.js"></script>
+    <script type="text/javascript" src="../_static/contentui.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="EDMLib Functions" href="functions.html" />
+    <link rel="prev" title="Getting Started" href="gettingStarted.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main">
+<div class="container-xl">
+
+    
+    <a class="navbar-brand" href="../index.html">
+      <img src="../_static/logo.png" class="logo" alt="logo">
+    </a>
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div id="navbar-menu" class="col-lg-9 collapse navbar-collapse">
+      <ul id="navbar-main-elements" class="navbar-nav mr-auto">
+        
+        
+        <li class="nav-item active">
+            <a class="nav-link" href="index.html">EDM Library Documentation</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../edmprogram/index.html">EDM Program Documentation</a>
+        </li>
+        
+        
+        <li class="nav-item">
+            <a class="nav-link nav-external" href="https://www.fordham.edu/info/20344/computer_and_information_science">Fordham CS Department<i class="fas fa-external-link-alt"></i></a>
+        </li>
+        
+      </ul>
+
+
+      
+
+      <ul class="navbar-nav">
+        
+        
+      </ul>
+    </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+          <div class="col-12 col-md-3 bd-sidebar">
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form>
+
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+
+  <div class="bd-toc-item active">
+  
+
+  <ul class="nav bd-sidenav">
+      
+      
+        
+          
+              <li class="">
+                  <a href="gettingStarted.html">Getting Started</a>
+              </li>
+          
+        
+          
+              <li class="active">
+                  <a href="">Common Usage Examples</a>
+              </li>
+          
+        
+          
+              <li class="">
+                  <a href="functions.html">EDMLib Functions</a>
+              </li>
+          
+        
+      
+      
+      
+      
+    </ul>
+
+</nav>
+          </div>
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+              
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#importing-the-fordham-dataset" class="nav-link">Importing the Fordham Dataset</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#filtering-data-to-certain-classes-or-majors" class="nav-link">Filtering Data to Certain Classes or Majors</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#filtering-data-to-students-of-specific-majors" class="nav-link">Filtering Data to Students of Specific Majors</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#exporting-correlation-data" class="nav-link">Exporting Correlation Data</a>
+        </li>
+    
+    </ul>
+</nav>
+
+
+              
+          </div>
+          
+
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="common-usage-examples">
+<span id="commonuses"></span><h1>Common Usage Examples<a class="headerlink" href="#common-usage-examples" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="importing-the-fordham-dataset">
+<h2>Importing the Fordham Dataset<a class="headerlink" href="#importing-the-fordham-dataset" title="Permalink to this headline">¶</a></h2>
+<p>This requires approval by the department first. After that, write a python file in the same directory as the dataset,
+with the correct file name:</p>
+<div class="sphinx-tabs docutils container">
+<div class="ui top attached tabular menu sphinx-menu docutils container">
+<div class="active item sphinx-data-tab-UHl0aG9u docutils container">
+<div class="docutils container">
+<p>Python</p>
+</div>
+</div>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment code-tab sphinx-data-tab-UHl0aG9u active docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">edmlib</span> <span class="kn">import</span> <span class="n">gradeData</span><span class="p">,</span> <span class="n">classCorrelationData</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">gradeData</span><span class="p">(</span><span class="s2">&quot;fordhams_dataset_fileName.csv&quot;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">defineWorkingColumns</span><span class="p">(</span><span class="s1">&#39;OTCM_FinalGradeN&#39;</span><span class="p">,</span> <span class="s1">&#39;SID&#39;</span><span class="p">,</span> <span class="s1">&#39;REG_term&#39;</span><span class="p">,</span> <span class="s1">&#39;REG_CourseCrn&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;REG_Programcode&#39;</span><span class="p">,</span> <span class="s1">&#39;REG_Numbercode&#39;</span><span class="p">,</span> <span class="s1">&#39;GRA_MajorAtGraduation&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="filtering-data-to-certain-classes-or-majors">
+<h2>Filtering Data to Certain Classes or Majors<a class="headerlink" href="#filtering-data-to-certain-classes-or-majors" title="Permalink to this headline">¶</a></h2>
+<p>For majors, define a python list with major or department names, making sure they are spelled the same in
+the defined ‘classDept’ column (this is the ‘REG_Programcode’ column in the fordam dataset).</p>
+<p>For classes, define a python list with class names that match the defined ‘classCode’ column. If ‘classCode’ was
+not defined but instead both ‘classDept’ and ‘classNumber’ were (like in the fordham dataset), these columns are added to define the ‘classCode’ column automatically, so use the concatenation of the two columns
+(e.g. ‘Psych1000’ from ‘Psych’ and ‘1000’).</p>
+<p>This example filters to Computer Science classes and “core” classes, as defined by Fordham.</p>
+<div class="sphinx-tabs docutils container">
+<div class="ui top attached tabular menu sphinx-menu docutils container">
+<div class="active item sphinx-data-tab-UHl0aG9u docutils container">
+<div class="docutils container">
+<p>Python</p>
+</div>
+</div>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment code-tab sphinx-data-tab-UHl0aG9u active docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">edmlib</span> <span class="kn">import</span> <span class="n">gradeData</span><span class="p">,</span> <span class="n">classCorrelationData</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">gradeData</span><span class="p">(</span><span class="s2">&quot;fordhams_dataset_fileName.csv&quot;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">defineWorkingColumns</span><span class="p">(</span><span class="s1">&#39;OTCM_FinalGradeN&#39;</span><span class="p">,</span> <span class="s1">&#39;SID&#39;</span><span class="p">,</span> <span class="s1">&#39;REG_term&#39;</span><span class="p">,</span> <span class="s1">&#39;REG_CourseCrn&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;REG_Programcode&#39;</span><span class="p">,</span> <span class="s1">&#39;REG_Numbercode&#39;</span><span class="p">,</span> <span class="s1">&#39;GRA_MajorAtGraduation&#39;</span><span class="p">)</span>
+
+<span class="n">majorsToFilterTo</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Computer and Info Science&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;Psychology&#39;</span><span class="p">]</span>
+<span class="n">coreClasses</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;Philosophy1000&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;Theology1000&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;English1102&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;English1101&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;History1000&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;Theology3200&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;VisualArts1101&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;Physics1201&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;Chemistry1101&#39;</span><span class="p">]</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">filterToMultipleMajorsOrClasses</span><span class="p">(</span><span class="n">majorsToFilterTo</span><span class="p">,</span> <span class="n">coreClasses</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>A similar filter is available for the correlational data class:</p>
+<div class="sphinx-tabs docutils container">
+<div class="ui top attached tabular menu sphinx-menu docutils container">
+<div class="active item sphinx-data-tab-UHl0aG9u docutils container">
+<div class="docutils container">
+<p>Python</p>
+</div>
+</div>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment code-tab sphinx-data-tab-UHl0aG9u active docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">classCorrelationData</span><span class="p">(</span><span class="s1">&#39;outputCorrelation.csv&#39;</span><span class="p">)</span>
+<span class="n">data</span><span class="o">.</span><span class="n">filterToMultipleMajorsOrClasses</span><span class="p">(</span><span class="n">majorsToFilterTo</span><span class="p">,</span> <span class="n">coreClasses</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="filtering-data-to-students-of-specific-majors">
+<h2>Filtering Data to Students of Specific Majors<a class="headerlink" href="#filtering-data-to-students-of-specific-majors" title="Permalink to this headline">¶</a></h2>
+<p>For filtering data to students who have declared certain majors, the ‘studentMajor’ column should have been
+defined with ‘defineWorkingColumns’. It should be noted that if a student ever declared one of these majors,
+they will be included. The syntax is very similar:</p>
+<div class="sphinx-tabs docutils container">
+<div class="ui top attached tabular menu sphinx-menu docutils container">
+<div class="active item sphinx-data-tab-UHl0aG9u docutils container">
+<div class="docutils container">
+<p>Python</p>
+</div>
+</div>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment code-tab sphinx-data-tab-UHl0aG9u active docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">edmlib</span> <span class="kn">import</span> <span class="n">gradeData</span><span class="p">,</span> <span class="n">classCorrelationData</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">gradeData</span><span class="p">(</span><span class="s2">&quot;fordhams_dataset_fileName.csv&quot;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">defineWorkingColumns</span><span class="p">(</span><span class="s1">&#39;OTCM_FinalGradeN&#39;</span><span class="p">,</span> <span class="s1">&#39;SID&#39;</span><span class="p">,</span> <span class="s1">&#39;REG_term&#39;</span><span class="p">,</span> <span class="s1">&#39;REG_CourseCrn&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;REG_Programcode&#39;</span><span class="p">,</span> <span class="s1">&#39;REG_Numbercode&#39;</span><span class="p">,</span> <span class="s1">&#39;GRA_MajorAtGraduation&#39;</span><span class="p">)</span>
+
+                        <span class="c1"># function takes a &#39;list&#39;</span>
+                        <span class="n">df</span><span class="o">.</span><span class="n">filterStudentsByMajors</span><span class="p">([</span><span class="s1">&#39;Psychology&#39;</span><span class="p">,</span> <span class="s1">&#39;Economics&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="exporting-correlation-data">
+<h2>Exporting Correlation Data<a class="headerlink" href="#exporting-correlation-data" title="Permalink to this headline">¶</a></h2>
+<p>Correlations can be obtained with the following example, which filters by GPA deviation first:</p>
+<div class="sphinx-tabs docutils container">
+<div class="ui top attached tabular menu sphinx-menu docutils container">
+<div class="active item sphinx-data-tab-UHl0aG9u docutils container">
+<div class="docutils container">
+<p>Python</p>
+</div>
+</div>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment code-tab sphinx-data-tab-UHl0aG9u active docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">edmlib</span> <span class="kn">import</span> <span class="n">gradeData</span><span class="p">,</span> <span class="n">classCorrelationData</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">gradeData</span><span class="p">(</span><span class="s1">&#39;yourDataSet.csv&#39;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">defineWorkingColumns</span><span class="p">(</span><span class="s1">&#39;OTCM_FinalGradeN&#39;</span><span class="p">,</span> <span class="s1">&#39;SID&#39;</span><span class="p">,</span> <span class="s1">&#39;REG_term&#39;</span><span class="p">,</span> <span class="s1">&#39;REG_CourseCrn&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;REG_Programcode&#39;</span><span class="p">,</span> <span class="s1">&#39;REG_Numbercode&#39;</span><span class="p">,</span> <span class="s1">&#39;GRA_MajorAtGraduation&#39;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">filterByGpaDeviationMoreThan</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
+
+
+<span class="c1"># The first parameter is the output file name, the second is the minimum</span>
+<span class="c1"># number of students classes must share to calculate a correlation</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">exportCorrelationsWithMinNSharedStudents</span><span class="p">(</span><span class="s1">&#39;outputCorrelation.csv&#39;</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Furthermore, this correlational data can be made into a chord graph like on the front page (<a class="reference internal" href="../index.html#front"><span class="std std-ref">EDMLib</span></a>)
+by using the <a class="reference internal" href="functions.html#correlation"><span class="std std-ref">Correlational Data</span></a> class, which outputs to HTML and PNG in the same directory:</p>
+<div class="sphinx-tabs docutils container">
+<div class="ui top attached tabular menu sphinx-menu docutils container">
+<div class="active item sphinx-data-tab-UHl0aG9u docutils container">
+<div class="docutils container">
+<p>Python</p>
+</div>
+</div>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment code-tab sphinx-data-tab-UHl0aG9u active docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">classCorrelationData</span><span class="p">(</span><span class="s1">&#39;outputCorrelation.csv&#39;</span><span class="p">)</span>
+<span class="n">data</span><span class="o">.</span><span class="n">chordGraphByMajor</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is currently limited to averaging data by major. Options for this function can be found here:
+<a class="reference internal" href="functions.html#correlationexport"><span class="std std-ref">Export / Graphs</span></a>.</p>
+</div>
+</div>
+
+
+              </div>
+              
+              
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="gettingStarted.html" title="previous page">Getting Started</a>
+    <a class='right-next' id="next-link" href="functions.html" title="next page">EDMLib Functions</a>
+
+              </div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+
+    <script src="../_static/js/index.js"></script>
+    <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    <p>
+          &copy; Copyright 2020, Michael Riad Zaky.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,296 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Getting Started &#8212; EDMLib  documentation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/semantic-ui-2.4.1/segment.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/semantic-ui-2.4.1/menu.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/semantic-ui-2.4.1/tab.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom_style.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/contentui.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script type="text/javascript" src="../_static/sphinx_tabs/semantic-ui-2.4.1/tab.min.js"></script>
+    <script type="text/javascript" src="../_static/sphinx_tabs/tabs.js"></script>
+    <script type="text/javascript" src="../_static/custom.js"></script>
+    <script type="text/javascript" src="../_static/contentui.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Common Usage Examples" href="commonUses.html" />
+    <link rel="prev" title="EDM Library Documentation" href="index.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main">
+<div class="container-xl">
+
+    
+    <a class="navbar-brand" href="../index.html">
+      <img src="../_static/logo.png" class="logo" alt="logo">
+    </a>
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div id="navbar-menu" class="col-lg-9 collapse navbar-collapse">
+      <ul id="navbar-main-elements" class="navbar-nav mr-auto">
+        
+        
+        <li class="nav-item active">
+            <a class="nav-link" href="index.html">EDM Library Documentation</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../edmprogram/index.html">EDM Program Documentation</a>
+        </li>
+        
+        
+        <li class="nav-item">
+            <a class="nav-link nav-external" href="https://www.fordham.edu/info/20344/computer_and_information_science">Fordham CS Department<i class="fas fa-external-link-alt"></i></a>
+        </li>
+        
+      </ul>
+
+
+      
+
+      <ul class="navbar-nav">
+        
+        
+      </ul>
+    </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+          <div class="col-12 col-md-3 bd-sidebar">
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form>
+
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+
+  <div class="bd-toc-item active">
+  
+
+  <ul class="nav bd-sidenav">
+      
+      
+        
+          
+              <li class="active">
+                  <a href="">Getting Started</a>
+              </li>
+          
+        
+          
+              <li class="">
+                  <a href="commonUses.html">Common Usage Examples</a>
+              </li>
+          
+        
+          
+              <li class="">
+                  <a href="functions.html">EDMLib Functions</a>
+              </li>
+          
+        
+      
+      
+      
+      
+    </ul>
+
+</nav>
+          </div>
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+              
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#installation" class="nav-link">Installation</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#importing-data" class="nav-link">Importing Data</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#grade-data" class="nav-link">Grade data</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#correlational-data" class="nav-link">Correlational data</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+    </ul>
+</nav>
+
+
+              
+          </div>
+          
+
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="getting-started">
+<span id="gettingstarted"></span><h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Download the library <a class="reference download internal" download="" href="../_downloads/78d518f2db8b67f7002c61dc6f16c58a/edmlib.py"><code class="xref download docutils literal notranslate"><span class="pre">here</span></code></a> .</p></li>
+<li><p>Place in the same directory as where you are writing your python file.</p></li>
+<li><p>In your python file, write the following line at the top:</p></li>
+</ol>
+<div class="sphinx-tabs docutils container">
+<div class="ui top attached tabular menu sphinx-menu docutils container">
+<div class="active item sphinx-data-tab-UHl0aG9u docutils container">
+<div class="docutils container">
+<p>Python</p>
+</div>
+</div>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment code-tab sphinx-data-tab-UHl0aG9u active docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">edmlib</span> <span class="kn">import</span> <span class="n">gradeData</span><span class="p">,</span> <span class="n">classCorrelationData</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This gives us the classes with all the relevant methods. If python gives errors when compiling, make sure to install
+the libraries it mentions such as <code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy</span></code> or <code class="xref py py-obj docutils literal notranslate"><span class="pre">pandas</span></code>.</p>
+</div>
+<div class="section" id="importing-data">
+<h2>Importing Data<a class="headerlink" href="#importing-data" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="grade-data">
+<h3>Grade data<a class="headerlink" href="#grade-data" title="Permalink to this headline">¶</a></h3>
+<p>Your data needs to be in the form of a <code class="code docutils literal notranslate"><span class="pre">.csv</span></code> file in the same directory or a “pandas” dataframe. This
+library expects data in the form of a list of grades recieved by students in certain classes, with more
+information possibly usable in the future. The columns required for core functionality right now include
+columns for final grades, student ID’s, class number or name (e.g. ‘1000’ in “Psych 1000”), class major or
+department, and the term the class was held.</p>
+<p>First, the data needs to be instantiated with the <code class="code docutils literal notranslate"><span class="pre">gradeData</span></code> class:</p>
+<div class="sphinx-tabs docutils container">
+<div class="ui top attached tabular menu sphinx-menu docutils container">
+<div class="active item sphinx-data-tab-UHl0aG9u docutils container">
+<div class="docutils container">
+<p>Python</p>
+</div>
+</div>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment code-tab sphinx-data-tab-UHl0aG9u active docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">gradeData</span><span class="p">(</span><span class="s1">&#39;fileName.csv&#39;</span><span class="p">)</span>
+
+<span class="c1"># or, for a pandas dataframe,</span>
+<span class="n">pandasData</span> <span class="o">=</span> <span class="n">gradeData</span><span class="p">(</span><span class="n">pandasDataFrame</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Then, either standard columns can be used for determining which column is which (where the data set has columns
+<code class="code docutils literal notranslate"><span class="pre">finalGrade</span></code>, <code class="code docutils literal notranslate"><span class="pre">studentID</span></code>, <code class="code docutils literal notranslate"><span class="pre">term</span></code>, <code class="code docutils literal notranslate"><span class="pre">classID</span></code>, <code class="code docutils literal notranslate"><span class="pre">classDept</span></code>, and <code class="code docutils literal notranslate"><span class="pre">classNumber</span></code> all defined),
+or you define your own columns with the method <code class="code docutils literal notranslate"><span class="pre">defineWorkingColumns</span></code>. Here is an example with Fordham’s
+dataset:</p>
+<div class="sphinx-tabs docutils container">
+<div class="ui top attached tabular menu sphinx-menu docutils container">
+<div class="active item sphinx-data-tab-UHl0aG9u docutils container">
+<div class="docutils container">
+<p>Python</p>
+</div>
+</div>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment code-tab sphinx-data-tab-UHl0aG9u active docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">defineWorkingColumns</span><span class="p">(</span><span class="s1">&#39;OTCM_FinalGradeN&#39;</span><span class="p">,</span> <span class="s1">&#39;SID&#39;</span><span class="p">,</span> <span class="s1">&#39;REG_term&#39;</span><span class="p">,</span> <span class="s1">&#39;REG_CourseCrn&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;REG_Programcode&#39;</span><span class="p">,</span> <span class="s1">&#39;REG_Numbercode&#39;</span><span class="p">,</span> <span class="s1">&#39;GRA_MajorAtGraduation&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The order of the parameters is important here. For more details, such as how class names can be given without
+a department or number, see the class’s <a class="reference internal" href="functions.html#gradedatainit"><span class="std std-ref">Initialization</span></a> section of the <a class="reference internal" href="functions.html#functions"><span class="std std-ref">EDMLib Functions</span></a> page.</p>
+<p>After that, all the functions on the page <a class="reference internal" href="functions.html#functions"><span class="std std-ref">EDMLib Functions</span></a> under <code class="code docutils literal notranslate"><span class="pre">gradeData</span></code> are ready for use.</p>
+</div>
+<div class="section" id="correlational-data">
+<h3>Correlational data<a class="headerlink" href="#correlational-data" title="Permalink to this headline">¶</a></h3>
+<p>If you have already used the library and exported correlational data with it, this data can also be imported in a
+similar way:</p>
+<div class="sphinx-tabs docutils container">
+<div class="ui top attached tabular menu sphinx-menu docutils container">
+<div class="active item sphinx-data-tab-UHl0aG9u docutils container">
+<div class="docutils container">
+<p>Python</p>
+</div>
+</div>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment code-tab sphinx-data-tab-UHl0aG9u active docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">classCorrelationData</span><span class="p">(</span><span class="s1">&#39;fileName.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Column names are standard within the program for this data and don’t need to be changed.</p>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+              
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="index.html" title="previous page">EDM Library Documentation</a>
+    <a class='right-next' id="next-link" href="commonUses.html" title="next page">Common Usage Examples</a>
+
+              </div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+
+    <script src="../_static/js/index.js"></script>
+    <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    <p>
+          &copy; Copyright 2020, Michael Riad Zaky.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

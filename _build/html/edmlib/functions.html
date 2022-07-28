@@ -1,0 +1,930 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>EDMLib Functions &#8212; EDMLib  documentation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom_style.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/contentui.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script type="text/javascript" src="../_static/custom.js"></script>
+    <script type="text/javascript" src="../_static/contentui.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="EDM Program Documentation" href="../edmprogram/index.html" />
+    <link rel="prev" title="Common Usage Examples" href="commonUses.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main">
+<div class="container-xl">
+
+    
+    <a class="navbar-brand" href="../index.html">
+      <img src="../_static/logo.png" class="logo" alt="logo">
+    </a>
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div id="navbar-menu" class="col-lg-9 collapse navbar-collapse">
+      <ul id="navbar-main-elements" class="navbar-nav mr-auto">
+        
+        
+        <li class="nav-item active">
+            <a class="nav-link" href="index.html">EDM Library Documentation</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../edmprogram/index.html">EDM Program Documentation</a>
+        </li>
+        
+        
+        <li class="nav-item">
+            <a class="nav-link nav-external" href="https://www.fordham.edu/info/20344/computer_and_information_science">Fordham CS Department<i class="fas fa-external-link-alt"></i></a>
+        </li>
+        
+      </ul>
+
+
+      
+
+      <ul class="navbar-nav">
+        
+        
+      </ul>
+    </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+          <div class="col-12 col-md-3 bd-sidebar">
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form>
+
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+
+  <div class="bd-toc-item active">
+  
+
+  <ul class="nav bd-sidenav">
+      
+      
+        
+          
+              <li class="">
+                  <a href="gettingStarted.html">Getting Started</a>
+              </li>
+          
+        
+          
+              <li class="">
+                  <a href="commonUses.html">Common Usage Examples</a>
+              </li>
+          
+        
+          
+              <li class="active">
+                  <a href="">EDMLib Functions</a>
+              </li>
+          
+        
+      
+      
+      
+      
+    </ul>
+
+</nav>
+          </div>
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+              
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#grade-data" class="nav-link">Grade Data</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#initialization" class="nav-link">Initialization</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#id1" class="nav-link">Functions</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h4">
+            <a href="#filtering-getting-data" class="nav-link">Filtering / Getting Data</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h4">
+            <a href="#export" class="nav-link">Export</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h4">
+            <a href="#logging-troubleshooting" class="nav-link">Logging / Troubleshooting</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#correlational-data" class="nav-link">Correlational Data</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#id2" class="nav-link">Initialization</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#id3" class="nav-link">Functions</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h4">
+            <a href="#id4" class="nav-link">Filtering / Getting Data</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h4">
+            <a href="#export-graphs" class="nav-link">Export / Graphs</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h4">
+            <a href="#id5" class="nav-link">Logging / Troubleshooting</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+            </ul>
+        </li>
+    
+    </ul>
+</nav>
+
+
+              
+          </div>
+          
+
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="edmlib-functions">
+<span id="functions"></span><h1>EDMLib Functions<a class="headerlink" href="#edmlib-functions" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="grade-data">
+<h2>Grade Data<a class="headerlink" href="#grade-data" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="edmlib.gradeData">
+<em class="property">class </em><code class="sig-prename descclassname">edmlib.</code><code class="sig-name descname">gradeData</code><span class="sig-paren">(</span><em class="sig-param">sourceFileOrDataFrame</em><span class="sig-paren">)</span><a class="headerlink" href="#edmlib.gradeData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class for manipulating grade datasets.</p>
+<dl class="attribute">
+<dt id="edmlib.gradeData.df">
+<code class="sig-name descname">df</code><a class="headerlink" href="#edmlib.gradeData.df" title="Permalink to this definition">¶</a></dt>
+<dd><p>dataframe containing all grade data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pandas.dataframe</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="edmlib.gradeData.sourceFile">
+<code class="sig-name descname">sourceFile</code><a class="headerlink" href="#edmlib.gradeData.sourceFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name of source .CSV file with grade data (optional).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<div class="section" id="initialization">
+<span id="gradedatainit"></span><h3>Initialization<a class="headerlink" href="#initialization" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="edmlib.gradeData.__init__">
+<code class="sig-prename descclassname">edmlib.gradeData.</code><code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">sourceFileOrDataFrame</em><span class="sig-paren">)</span><a class="headerlink" href="#edmlib.gradeData.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class constructor, creates an instance of the class given a .CSV file or pandas dataframe.</p>
+<p>Used with gradeData(‘fileName.csv’) or gradeData(dataFrameVariable).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>sourceFileOrDataFrame</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">object</span></code>) – name of the .CSV file (extension included) in the same path or pandas dataframe variable. Dataframes are copied so as to not affect the original variable.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="edmlib.gradeData.defineWorkingColumns">
+<code class="sig-prename descclassname">edmlib.gradeData.</code><code class="sig-name descname">defineWorkingColumns</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">finalGrade</em>, <em class="sig-param">studentID</em>, <em class="sig-param">term</em>, <em class="sig-param">classID='classID'</em>, <em class="sig-param">classDept='classDept'</em>, <em class="sig-param">classNumber='classNumber'</em>, <em class="sig-param">studentMajor='studentMajor'</em>, <em class="sig-param">studentYear='studentYear'</em>, <em class="sig-param">classCredits='classCredits'</em>, <em class="sig-param">facultyID='facultyID'</em>, <em class="sig-param">classCode='classCode'</em><span class="sig-paren">)</span><a class="headerlink" href="#edmlib.gradeData.defineWorkingColumns" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the column constants to target in the pandas dataframe for data manipulation. Required for proper functioning
+of the library.</p>
+<div class="alert alert-info">
+<p class="admonition-title">Note</p>
+<p>Either both <code class="xref py py-obj docutils literal notranslate"><span class="pre">classDept</span></code> and <code class="xref py py-obj docutils literal notranslate"><span class="pre">classNumber</span></code> variables need to be defined in the dataset’s columns, or <code class="xref py py-obj docutils literal notranslate"><span class="pre">classCode</span></code> needs to be defined for the library to function. The opposite variable(s) are then optional. <code class="xref py py-obj docutils literal notranslate"><span class="pre">classDept</span></code> needs to be defined for major related functions to work.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>finalGrade</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>) – Name of the column with grades given to a student in the respective class, grades are expected to be on a 1.0 - 4.0+ scale.</p></li>
+<li><p><strong>studentID</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>) – Name of the column with student IDs, which does not need to follow any format.</p></li>
+<li><p><strong>term</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>) – Name of the column with the term the class was taken, does not need to follow any format.</p></li>
+<li><p><strong>classID</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>) – Number or string specific to a given class section, does not need to follow any format.</p></li>
+<li><p><strong>classDept</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>, optional) – Name of the column stating the department of the class, e.g. ‘Psych’. Defaults to ‘classDept’.</p></li>
+<li><p><strong>classNumber</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>, optional) – Name of the column stating a number associated with the class, e.g. ‘1000’ in ‘Psych1000’ or ‘Intro to Psych’. Defaults to ‘classNumber’.</p></li>
+<li><p><strong>studentMajor</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>, optional) – Name of the column stating the major of the student. Optional, but required for functions involving student majors.</p></li>
+<li><p><strong>classCredits</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>, optional) – Name of the column stating the number of credits a class is worth. Optional, but can be used to make student GPA calculations more accurate.</p></li>
+<li><p><strong>facultyID</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>, optional) – Name of the column with faculty IDs, which does not need to follow any format. This is the faculty that taught the class. Optional, but required for instructor effectiveness functions.</p></li>
+<li><p><strong>classCode</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>, optional) – Name of the column defining a class specific name, e.g. ‘Psych1000’. Defaults to ‘classCode’.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="id1">
+<h3>Functions<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="filtering-getting-data">
+<h4>Filtering / Getting Data<a class="headerlink" href="#filtering-getting-data" title="Permalink to this headline">¶</a></h4>
+<dl class="function">
+<dt id="edmlib.gradeData.dropMissingValuesInColumn">
+<code class="sig-prename descclassname">edmlib.gradeData.</code><code class="sig-name descname">dropMissingValuesInColumn</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">column</em><span class="sig-paren">)</span><a class="headerlink" href="#edmlib.gradeData.dropMissingValuesInColumn" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes rows in the dataset which have missing data in the given column.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>column</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>) – Column to check for missing values in.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="edmlib.gradeData.filterByGpaDeviationMoreThan">
+<code class="sig-prename descclassname">edmlib.gradeData.</code><code class="sig-name descname">filterByGpaDeviationMoreThan</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">minimum</em>, <em class="sig-param">outputDropped=False</em>, <em class="sig-param">droppedCSVName='droppedData.csv'</em><span class="sig-paren">)</span><a class="headerlink" href="#edmlib.gradeData.filterByGpaDeviationMoreThan" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filters data to only include classes which have a standard deviation more than or equal to a given minimum (0.0 to 4.0 scale).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>minimum</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code>) – Minimum standard deviation of grades a class must have.</p></li>
+<li><p><strong>outputDropped</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code>, optional) – Whether to output the dropped data to a file. Default is False.</p></li>
+<li><p><strong>droppedCSVName</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>, optional) – Name of file to output dropped data to. Default is ‘droppedData.csv`.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="edmlib.gradeData.filterColumnToValues">
+<code class="sig-prename descclassname">edmlib.gradeData.</code><code class="sig-name descname">filterColumnToValues</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">col</em>, <em class="sig-param">values=[]</em><span class="sig-paren">)</span><a class="headerlink" href="#edmlib.gradeData.filterColumnToValues" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filters dataset to only include rows that contain any of the given values in the given column.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>col</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>) – Name of the column to filter.</p></li>
+<li><p><strong>values</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code>) – Values to filter to.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="edmlib.gradeData.filterToMultipleMajorsOrClasses">
+<code class="sig-prename descclassname">edmlib.gradeData.</code><code class="sig-name descname">filterToMultipleMajorsOrClasses</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">majors=[]</em>, <em class="sig-param">classes=[]</em><span class="sig-paren">)</span><a class="headerlink" href="#edmlib.gradeData.filterToMultipleMajorsOrClasses" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reduces the dataset to only include entries of certain classes and/or classes in certain majors. This function is
+inclusive; if a class in ‘classes’ is not of a major defined in ‘majors’, the class will still be included, and
+vice-versa.</p>
+<div class="alert alert-info">
+<p class="admonition-title">Note</p>
+<p>The ‘classDept’ column as set by <a class="reference internal" href="#edmlib.gradeData.defineWorkingColumns" title="edmlib.gradeData.defineWorkingColumns"><code class="xref py py-obj docutils literal notranslate"><span class="pre">defineWorkingColumns</span></code></a> must be defined in your dataset to filter by major.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>majors</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code>, optional) – List of majors to include. Filters by the ‘classDept’ column.</p></li>
+<li><p><strong>classes</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code>, optional) – List of classes to include. Filters by the ‘classCode’ column, or the conjoined version of ‘classDept’ and ‘classNumber’ columns.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="edmlib.gradeData.filterStudentsByMajors">
+<code class="sig-prename descclassname">edmlib.gradeData.</code><code class="sig-name descname">filterStudentsByMajors</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">majors</em><span class="sig-paren">)</span><a class="headerlink" href="#edmlib.gradeData.filterStudentsByMajors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filters the dataset down to students who were ever recorded as majoring in one of the given majors.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>majors</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code>, optional) – List of student majors to include when finding matching students. Filters by the ‘studentMajor’ column.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="edmlib.gradeData.getCorrelationsWithMinNSharedStudents">
+<code class="sig-prename descclassname">edmlib.gradeData.</code><code class="sig-name descname">getCorrelationsWithMinNSharedStudents</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">nSharedStudents=20</em>, <em class="sig-param">directed=False</em>, <em class="sig-param">classDetails=False</em>, <em class="sig-param">sequenceDetails=False</em><span class="sig-paren">)</span><a class="headerlink" href="#edmlib.gradeData.getCorrelationsWithMinNSharedStudents" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a pandas dataframe with correlations between all available classes based on grades, after normalization.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nSharedStudents</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code>, optional) – Minimum number of shared students a pair of classes must have to compute a correlation. Defaults to 20.</p></li>
+<li><p><strong>directed</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code>, optional) – Whether or not to include data specific to students who took class A before B, vice versa, and concurrently. Defaults to ‘False’.</p></li>
+<li><p><strong>classDetails</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code>, optional) – Whether or not to include means of student grades, normalized grades, and standard deviations used. Defaults to ‘False’.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Pandas dataframe with at least columns “course1”, “course2”, “corr”, “P-value”, and “#students”, which store class names, their correlation coefficient (0 least to 1 most), the P-value of this calculation, and the number of students shared between these two classes.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pandas.dataframe</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="edmlib.gradeData.getColumn">
+<code class="sig-prename descclassname">edmlib.gradeData.</code><code class="sig-name descname">getColumn</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">column</em><span class="sig-paren">)</span><a class="headerlink" href="#edmlib.gradeData.getColumn" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a given column.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>column</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>) – name of the column to return.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>column contained in pandas dataframe.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pandas.series</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="edmlib.gradeData.getDictOfStudentMajors">
+<code class="sig-prename descclassname">edmlib.gradeData.</code><code class="sig-name descname">getDictOfStudentMajors</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#edmlib.gradeData.getDictOfStudentMajors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a dictionary of students and their latest respective declared majors. Student ID, Student Major, and Term columns are required.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>N/A</strong> – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>): Dictionary of students and their latest respective declared majors.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">dict`(:obj:`str</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="edmlib.gradeData.getListOfClassCodes">
+<code class="sig-prename descclassname">edmlib.gradeData.</code><code class="sig-name descname">getListOfClassCodes</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#edmlib.gradeData.getListOfClassCodes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of unique class codes currently in the dataset from the ‘classCode’ column, which is the conjoined ‘classDept’ and ‘classNumber’ columns by default (e.g. ‘Psych1000’ from ‘Psych’ and ‘1000’).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>List of unique class codes in the dataset.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="edmlib.gradeData.getUniqueIdentifiersForSectionsAcrossTerms">
+<code class="sig-prename descclassname">edmlib.gradeData.</code><code class="sig-name descname">getUniqueIdentifiersForSectionsAcrossTerms</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#edmlib.gradeData.getUniqueIdentifiersForSectionsAcrossTerms" title="Permalink to this definition">¶</a></dt>
+<dd><p>Used internally. If a column ‘classCode’ is unavailable, a new column is made by combining ‘classDept’ and
+‘classNumber’ columns. Also makes a new ‘classIdAndTerm’ column by combining the ‘classID’ and ‘term’ columns,
+to differentiate specific class sections in specific terms.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="edmlib.gradeData.getNormalizationColumn">
+<code class="sig-prename descclassname">edmlib.gradeData.</code><code class="sig-name descname">getNormalizationColumn</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#edmlib.gradeData.getNormalizationColumn" title="Permalink to this definition">¶</a></dt>
+<dd><p>Used internally. Creates a normalization column ‘norm’ that is a “normalization” of grades recieved in specific classes.
+This is equivelant to the grade given to a student minus the mean grade in that class, all divided by the standard
+deviation of grades in that class.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="edmlib.gradeData.getGPADeviations">
+<code class="sig-prename descclassname">edmlib.gradeData.</code><code class="sig-name descname">getGPADeviations</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#edmlib.gradeData.getGPADeviations" title="Permalink to this definition">¶</a></dt>
+<dd><p>Used internally. Makes a new column called ‘gpaStdDeviation’, the standard deviation of grades of the respective
+class for each entry.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="edmlib.gradeData.getGPAMeans">
+<code class="sig-prename descclassname">edmlib.gradeData.</code><code class="sig-name descname">getGPAMeans</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#edmlib.gradeData.getGPAMeans" title="Permalink to this definition">¶</a></dt>
+<dd><p>Used internally. Makes a new column called ‘gpaMean’, the mean of grades recieved in the respective class of each entry.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="edmlib.gradeData.getPandasDataFrame">
+<code class="sig-prename descclassname">edmlib.gradeData.</code><code class="sig-name descname">getPandasDataFrame</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#edmlib.gradeData.getPandasDataFrame" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the pandas dataframe of the dataset.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Dataframe of the current dataset.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pandas.dataframe</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="edmlib.gradeData.substituteSubStrInColumn">
+<code class="sig-prename descclassname">edmlib.gradeData.</code><code class="sig-name descname">substituteSubStrInColumn</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">column</em>, <em class="sig-param">subString</em>, <em class="sig-param">substitute</em><span class="sig-paren">)</span><a class="headerlink" href="#edmlib.gradeData.substituteSubStrInColumn" title="Permalink to this definition">¶</a></dt>
+<dd><p>Replace a substring in a given column.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>column</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>) – Column to replace substring in.</p></li>
+<li><p><strong>subString</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>) – Substring to replace.</p></li>
+<li><p><strong>substitute</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>) – Replacement of the substring.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="export">
+<h4>Export<a class="headerlink" href="#export" title="Permalink to this headline">¶</a></h4>
+<dl class="function">
+<dt id="edmlib.gradeData.exportCSV">
+<code class="sig-prename descclassname">edmlib.gradeData.</code><code class="sig-name descname">exportCSV</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">fileName='csvExport.csv'</em><span class="sig-paren">)</span><a class="headerlink" href="#edmlib.gradeData.exportCSV" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export the current state of the dataset to a <code class="xref py py-obj docutils literal notranslate"><span class="pre">CSV</span></code> file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>fileName</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>, optional) – Name of the file to export. Defaults to ‘csvExport.csv’.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="edmlib.gradeData.exportCorrelationsWithMinNSharedStudents">
+<code class="sig-prename descclassname">edmlib.gradeData.</code><code class="sig-name descname">exportCorrelationsWithMinNSharedStudents</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">filename='CorrelationOutput_EDMLIB.csv'</em>, <em class="sig-param">nStudents=20</em>, <em class="sig-param">directedCorr=False</em>, <em class="sig-param">detailed=False</em>, <em class="sig-param">sequenced=False</em><span class="sig-paren">)</span><a class="headerlink" href="#edmlib.gradeData.exportCorrelationsWithMinNSharedStudents" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exports CSV file with all correlations between classes with the given minimum number of shared students. File format has columns ‘course1’, ‘course2’, ‘corr’, ‘P-value’, ‘#students’.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fileName</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>, optional) – Name of CSV to output. Default ‘CorrelationOutput_EDMLIB.csv’.</p></li>
+<li><p><strong>nStudents</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code>, optional) – Minimum number of shared students a pair of classes must have to compute a correlation. Defaults to 20.</p></li>
+<li><p><strong>directedCorr</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code>, optional) – Whether or not to include data specific to students who took class A before B, vice versa, and concurrently. Defaults to ‘False’.</p></li>
+<li><p><strong>detailed</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code>, optional) – Whether or not to include means of student grades, normalized grades, and standard deviations used. Defaults to ‘False’.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="edmlib.gradeData.gradePredict">
+<code class="sig-prename descclassname">edmlib.gradeData.</code><code class="sig-name descname">gradePredict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">priorGrades</em>, <em class="sig-param">futureClasses</em>, <em class="sig-param">method='nearest'</em>, <em class="sig-param">excludedStudents=None</em>, <em class="sig-param">normalized=False</em><span class="sig-paren">)</span><a class="headerlink" href="#edmlib.gradeData.gradePredict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Predicts grades given a student’s past grades and classes to predict for. Still being developed.</p>
+<p>:param priorGrades (<code class="xref py py-obj docutils literal notranslate"><span class="pre">dict`(:obj:`str</span></code>: <code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code>)): Dictionary of past courses and the respective grade recieved.
+:param futureClasses: List of courses to predict grades for.
+:type futureClasses: <code class="xref py py-obj docutils literal notranslate"><span class="pre">list`(:obj:`str</span></code>)
+:param method: Method to use to predict grades. Current methods include ‘nearest’ which gives the grade recieved by the most similar student on record and ‘nearestThree’ which gives the grade closest to the mean of the grades recieved by the nearest three students on record. Set to ‘nearest’ by default.
+:type method: <code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>, optional
+:param excludedStudents: List of students to exclude when making calculation. Used for accuracy testing purposes. Set to <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code> by default.
+:type excludedStudents: <code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code>, optional
+:param normalized: Whether or not normalized grades are given as input. Used for accuracy testing purposes and should generally be set to <code class="xref py py-obj docutils literal notranslate"><span class="pre">False</span></code>. Set to <code class="xref py py-obj docutils literal notranslate"><span class="pre">False</span></code> by default.
+:type normalized: <code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code>, optional</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code>): Dictionary of grade predictions, where the key is the class and the value is the grade predicted.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">dict`(:obj:`str</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="edmlib.gradeData.instructorRanks">
+<code class="sig-prename descclassname">edmlib.gradeData.</code><code class="sig-name descname">instructorRanks</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">firstClass</em>, <em class="sig-param">secondClass</em>, <em class="sig-param">fileName='instructorRanking'</em>, <em class="sig-param">minStudents=1</em><span class="sig-paren">)</span><a class="headerlink" href="#edmlib.gradeData.instructorRanks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a table of instructors and their calculated benefit to students based on a class they taught and future performance in a given class taken later. Exports a CSV file and returns a pandas dataframe.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>firstClass</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>) – Class to look at instructors / their students from.</p></li>
+<li><p><strong>secondClass</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>) – Class to look at future performance of students who had relevant professors from the first class.</p></li>
+<li><p><strong>fileName</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>, optional) – Name of CSV file to save. Set to ‘instructorRanking’ by default.</p></li>
+<li><p><strong>minStudents</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code>, optional) – Minimum number of students to get data from for an instructor to be included in the calculation. Set to 1 by default.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Pandas dataframe with columns indicating the instructor, the normalized benefit to students, the grade point benefit to students, and the number of students used to calculate for that instructor.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pandas.dataframe</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="edmlib.gradeData.instructorRanksAllClasses">
+<code class="sig-prename descclassname">edmlib.gradeData.</code><code class="sig-name descname">instructorRanksAllClasses</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">fileName='completeInstructorRanks'</em>, <em class="sig-param">minStudents=20</em>, <em class="sig-param">directionality=0.8</em>, <em class="sig-param">outputSubjectAverages=False</em>, <em class="sig-param">subjectFileName='instructorAverages'</em>, <em class="sig-param">otherRank=None</em><span class="sig-paren">)</span><a class="headerlink" href="#edmlib.gradeData.instructorRanksAllClasses" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a table of instructors and their calculated benefit to students based on all classes they taught and future performance in all classes taken later. Exports a CSV file and returns a pandas dataframe.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fileName</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>, optional) – Name of CSV file to save. Set to ‘completeInstructorRanks’ by default.</p></li>
+<li><p><strong>minStudents</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code>, optional) – Minimum number of students to get data from for an instructor’s entry to be included in the calculation. Set to 1 by default.</p></li>
+<li><p><strong>directionality</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code>, optional) – Minimum directionality (percentage of students who took one class before another). Range 0.0 to 1.0. Set to 0.8 by default.</p></li>
+<li><p><strong>outputSubjectAverages</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code>, optional) – Output a file with averages of all the data in this file, by instructor, by subject. Set to <code class="xref py py-obj docutils literal notranslate"><span class="pre">False</span></code> by default.</p></li>
+<li><p><strong>subjectFileName</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>, optional) – File to output instructor/subject averages to. Set to ‘instructorAverages’ by default.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Pandas dataframe with columns indicating the instructor, the class taken, the future class, the normalized benefit to students, the grade point benefit to students, the number of students used to calculate for that instructor / class combination, as well as the number of students on the opposite side of that calculation (students in future class who did not take that instructor before).</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pandas.dataframe</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="edmlib.gradeData.outputGpaDistribution">
+<code class="sig-prename descclassname">edmlib.gradeData.</code><code class="sig-name descname">outputGpaDistribution</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">makeHistogram=False</em>, <em class="sig-param">fileName='gpaHistogram'</em>, <em class="sig-param">graphTitle='GPA Distribution'</em>, <em class="sig-param">minClasses=36</em><span class="sig-paren">)</span><a class="headerlink" href="#edmlib.gradeData.outputGpaDistribution" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prints to console an overview of student GPAs in increments of 0.1 between 1.0 and 4.0. Optionally, outputs a histogram as well.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>makeHistogram</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code>, optional) – Whether or not to make a histogram graph. Default false.</p></li>
+<li><p><strong>fileName</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>) – Name of histogram files to output. Default ‘gpaHistogram’.</p></li>
+<li><p><strong>graphTitle</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>) – Title to display on graph. Default ‘GPA Distribution’.</p></li>
+<li><p><strong>minClasses</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code>) – Number of classes a student needs to have on record to count GPA. Default 36.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="edmlib.gradeData.sankeyGraphByCourseTracks">
+<code class="sig-prename descclassname">edmlib.gradeData.</code><code class="sig-name descname">sankeyGraphByCourseTracks</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">courseGroups</em>, <em class="sig-param">graphTitle='Track Distribution'</em>, <em class="sig-param">outputName='sankeyGraph'</em>, <em class="sig-param">consecutive=True</em>, <em class="sig-param">minEdgeValue=None</em>, <em class="sig-param">termThreshold=None</em><span class="sig-paren">)</span><a class="headerlink" href="#edmlib.gradeData.sankeyGraphByCourseTracks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exports a sankey graph according to a given course track. Input is organized in a jagged array, with the first array the first set of classes a student can take, the second set the second possible class a student can take, etc..</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>courseGroups</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">list`(:obj:`list</span></code>)) – List of course groups (also lists) to make the sankey graph with. Minimum two course groups.</p></li>
+<li><p><strong>graphTitle</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>) – Title that goes on the sankey graph. Defaults to ‘Track Distribution’.</p></li>
+<li><p><strong>outputName</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>) – Name of sankey files (.csv, .html) to output. Defaults to ‘sankeyGraph’.</p></li>
+<li><p><strong>consecutive</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code>) – Whether or not students must complete the entire track consecutively, or start at a group other than what is designated. This mostly affects students who needed to retake a class. Defaults to <code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code> (students must complete track from beginning / as designated for data to be recorded).</p></li>
+<li><p><strong>minEdgeValue</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code>, optional) – Minimum value for an edge to be included on the sankey graph. Defaults to <cite>None</cite>, or no minimum value needed.</p></li>
+<li><p><strong>termThreshold</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code>, optional) – If defined, attempts to use the ‘termOrder’ column where terms are given a numbered order and a given maximum threshold for what counts as a “consecutive” term.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="edmlib.gradeData.sankeyGraphByCourseTracksOneGroup">
+<code class="sig-prename descclassname">edmlib.gradeData.</code><code class="sig-name descname">sankeyGraphByCourseTracksOneGroup</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">courseGroup</em>, <em class="sig-param">requiredCourses=None</em>, <em class="sig-param">graphTitle='Track Distribution'</em>, <em class="sig-param">outputName='sankeyGraph'</em>, <em class="sig-param">minEdgeValue=None</em><span class="sig-paren">)</span><a class="headerlink" href="#edmlib.gradeData.sankeyGraphByCourseTracksOneGroup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exports a sankey graph according to a given course track. Input is organized as an array of classes included in the track, and optionally a subgroup of classes required for a student to be counted in the graph can be designated as well.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>courseGroup</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">list`(:obj:`str</span></code>)) – List of courses to make the sankey graph with. Minimum two courses.</p></li>
+<li><p><strong>requiredCourses</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">list`(:obj:`str</span></code>)) – List of courses required for a student to count towards the graph. All courses in ‘courseGroup’ by default.</p></li>
+<li><p><strong>graphTitle</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>) – Title that goes on the sankey graph. Defaults to ‘Track Distribution’.</p></li>
+<li><p><strong>outputName</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>) – Name of sankey files (.csv, .html) to output. Defaults to ‘sankeyGraph’.</p></li>
+<li><p><strong>minEdgeValue</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code>, optional) – Minimum value for an edge to be included on the sankey graph. Defaults to <cite>None</cite>, or no minimum value needed.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="logging-troubleshooting">
+<h4>Logging / Troubleshooting<a class="headerlink" href="#logging-troubleshooting" title="Permalink to this headline">¶</a></h4>
+<dl class="function">
+<dt id="edmlib.gradeData.printColumn">
+<code class="sig-prename descclassname">edmlib.gradeData.</code><code class="sig-name descname">printColumn</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">column</em><span class="sig-paren">)</span><a class="headerlink" href="#edmlib.gradeData.printColumn" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prints the given column.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>column</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>) – Column to print to console.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="edmlib.gradeData.printUniqueValuesInColumn">
+<code class="sig-prename descclassname">edmlib.gradeData.</code><code class="sig-name descname">printUniqueValuesInColumn</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">column</em><span class="sig-paren">)</span><a class="headerlink" href="#edmlib.gradeData.printUniqueValuesInColumn" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prints to console the unique variables in a given column.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>column</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>) – Column to get unique variables from.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="edmlib.gradeData.printEntryCount">
+<code class="sig-prename descclassname">edmlib.gradeData.</code><code class="sig-name descname">printEntryCount</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#edmlib.gradeData.printEntryCount" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prints to console the number of entries (rows) in the current dataset.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="edmlib.gradeData.printFirstXRows">
+<code class="sig-prename descclassname">edmlib.gradeData.</code><code class="sig-name descname">printFirstXRows</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">rows</em><span class="sig-paren">)</span><a class="headerlink" href="#edmlib.gradeData.printFirstXRows" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prints to console the first X number of rows from the dataset.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>rows</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code>) – Number of rows to print from the dataset.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+</div>
+<div class="section" id="correlational-data">
+<span id="correlation"></span><h2>Correlational Data<a class="headerlink" href="#correlational-data" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="edmlib.classCorrelationData">
+<em class="property">class </em><code class="sig-prename descclassname">edmlib.</code><code class="sig-name descname">classCorrelationData</code><span class="sig-paren">(</span><em class="sig-param">sourceFileOrDataFrame</em><span class="sig-paren">)</span><a class="headerlink" href="#edmlib.classCorrelationData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class for manipulating and visualizing pearson correlations generated by the gradeData class.</p>
+<dl class="attribute">
+<dt id="edmlib.classCorrelationData.df">
+<code class="sig-name descname">df</code><a class="headerlink" href="#edmlib.classCorrelationData.df" title="Permalink to this definition">¶</a></dt>
+<dd><p>dataframe containing all correlational data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pandas.dataframe</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="edmlib.classCorrelationData.sourceFile">
+<code class="sig-name descname">sourceFile</code><a class="headerlink" href="#edmlib.classCorrelationData.sourceFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name of source .CSV file with correlational data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<div class="section" id="id2">
+<h3>Initialization<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="edmlib.classCorrelationData.__init__">
+<code class="sig-prename descclassname">edmlib.classCorrelationData.</code><code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">sourceFileOrDataFrame</em><span class="sig-paren">)</span><a class="headerlink" href="#edmlib.classCorrelationData.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class constructor, creates an instance of the class given a .CSV file or pandas dataframe. Typically should only be used manually with correlation files outputted by the gradeData class.</p>
+<p>Used with classCorrelationData(‘fileName.csv’) or classCorrelationData(dataFrameVariable).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>sourceFileOrDataFrame</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">object</span></code>) – name of the .CSV file (extension included) in the same path or pandas dataframe variable. Dataframes are copied so as to not affect the original variable.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="id3">
+<h3>Functions<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id4">
+<h4>Filtering / Getting Data<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<dl class="function">
+<dt id="edmlib.classCorrelationData.dropMissingValuesInColumn">
+<code class="sig-prename descclassname">edmlib.classCorrelationData.</code><code class="sig-name descname">dropMissingValuesInColumn</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">column</em><span class="sig-paren">)</span><a class="headerlink" href="#edmlib.classCorrelationData.dropMissingValuesInColumn" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes rows in the dataset which have missing data in the given column.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>column</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>) – Column to check for missing values in.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="edmlib.classCorrelationData.filterColumnToValues">
+<code class="sig-prename descclassname">edmlib.classCorrelationData.</code><code class="sig-name descname">filterColumnToValues</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">col</em>, <em class="sig-param">values=[]</em><span class="sig-paren">)</span><a class="headerlink" href="#edmlib.classCorrelationData.filterColumnToValues" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filters dataset to only include rows that contain any of the given values in the given column.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>col</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>) – Name of the column to filter.</p></li>
+<li><p><strong>values</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code>) – Values to filter to.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="edmlib.classCorrelationData.filterToMultipleMajorsOrClasses">
+<code class="sig-prename descclassname">edmlib.classCorrelationData.</code><code class="sig-name descname">filterToMultipleMajorsOrClasses</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">majors=[]</em>, <em class="sig-param">classes=[]</em>, <em class="sig-param">twoWay=True</em><span class="sig-paren">)</span><a class="headerlink" href="#edmlib.classCorrelationData.filterToMultipleMajorsOrClasses" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reduces the dataset to only include entries of certain classes and/or classes in certain majors. This function is
+inclusive; if a class in ‘classes’ is not of a major defined in ‘majors’, the class will still be included, and
+vice-versa.</p>
+<div class="alert alert-info">
+<p class="admonition-title">Note</p>
+<p>The ‘classDept’ column as set by <code class="xref py py-obj docutils literal notranslate"><span class="pre">defineWorkingColumns</span></code> must have been defined in your dataset to filter by major.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>majors</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code>, optional) – List of majors to include. Filters by the ‘classDept’ column in the original dataset.</p></li>
+<li><p><strong>classes</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code>, optional) – List of classes to include. Filters by the ‘classCode’ column in the original dataset, or the conjoined version of ‘classDept’ and ‘classNumber’ columns.</p></li>
+<li><p><strong>twoWay</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code>, optional) – Whether both classes in the correlation must be in the given majors / classes, or only one of them. Set to <code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code>, or both classes, by default.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="edmlib.classCorrelationData.getCliques">
+<code class="sig-prename descclassname">edmlib.classCorrelationData.</code><code class="sig-name descname">getCliques</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">minCorr=None</em>, <em class="sig-param">minSize=2</em><span class="sig-paren">)</span><a class="headerlink" href="#edmlib.classCorrelationData.getCliques" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of lists / cliques present in the correlational data. Cliques are connected sub-graphs in the larger overall graph.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>minCorr</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code> or <code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code>, optional) – Minimum correlation to consider a correlation an edge on the graph. ‘None’, or ignored, by default.</p></li>
+<li><p><strong>minSize</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code>, optional) – Minimum number of nodes to look for in a clique. Default is 2.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="edmlib.classCorrelationData.getNxGraph">
+<code class="sig-prename descclassname">edmlib.classCorrelationData.</code><code class="sig-name descname">getNxGraph</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">minCorr=None</em><span class="sig-paren">)</span><a class="headerlink" href="#edmlib.classCorrelationData.getNxGraph" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a NetworkX graph of the correlational data, where the nodes are classes and the weights are the correlations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>minCorr</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code>, optional) – Minimum correlation between classes for an edge to be included on the graph. Should be in the 0.0-1.0 range. Defaults to <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code> (or do not filter).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="edmlib.classCorrelationData.substituteSubStrInColumn">
+<code class="sig-prename descclassname">edmlib.classCorrelationData.</code><code class="sig-name descname">substituteSubStrInColumn</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">column</em>, <em class="sig-param">subString</em>, <em class="sig-param">substitute</em><span class="sig-paren">)</span><a class="headerlink" href="#edmlib.classCorrelationData.substituteSubStrInColumn" title="Permalink to this definition">¶</a></dt>
+<dd><p>Replace a substring in a given column.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>column</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>) – Column to replace substring in.</p></li>
+<li><p><strong>subString</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>) – Substring to replace.</p></li>
+<li><p><strong>substitute</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>) – Replacement of the substring.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="export-graphs">
+<span id="correlationexport"></span><h4>Export / Graphs<a class="headerlink" href="#export-graphs" title="Permalink to this headline">¶</a></h4>
+<dl class="function">
+<dt id="edmlib.classCorrelationData.exportCSV">
+<code class="sig-prename descclassname">edmlib.classCorrelationData.</code><code class="sig-name descname">exportCSV</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">fileName='csvExport.csv'</em><span class="sig-paren">)</span><a class="headerlink" href="#edmlib.classCorrelationData.exportCSV" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export the current state of the dataset to a <code class="xref py py-obj docutils literal notranslate"><span class="pre">CSV</span></code> file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>fileName</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>, optional) – Name of the file to export. Defaults to ‘csvExport.csv’.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="edmlib.classCorrelationData.chordGraphByMajor">
+<code class="sig-prename descclassname">edmlib.classCorrelationData.</code><code class="sig-name descname">chordGraphByMajor</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">coefficient=0.5</em>, <em class="sig-param">pval=0.05</em>, <em class="sig-param">outputName='majorGraph'</em>, <em class="sig-param">outputSize=200</em>, <em class="sig-param">imageSize=300</em>, <em class="sig-param">showGraph=True</em>, <em class="sig-param">outputImage=True</em><span class="sig-paren">)</span><a class="headerlink" href="#edmlib.classCorrelationData.chordGraphByMajor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a chord graph between available majors through averaging and filtering both correlation coefficients and P-values. Outputs to an html file, PNG file, and saves the underlying data by default.</p>
+<div class="alert alert-info">
+<p class="admonition-title">Note</p>
+<p>The ‘classDept’ column as set by <code class="xref py py-obj docutils literal notranslate"><span class="pre">defineWorkingColumns</span></code> must have been defined in your dataset to filter by major.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>coefficient</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code>, optional) – Minimum correlation coefficient to filter correlations by.</p></li>
+<li><p><strong>pval</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code>, optional) – Maximum P-value to filter correlations by.</p></li>
+<li><p><strong>outputName</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>, optional) – First part of the outputted file names, e.g. fileName.csv, fileName.html, etc.</p></li>
+<li><p><strong>outputSize</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code>, optional) – Size (units unknown) of html graph to output. 200 by default.</p></li>
+<li><p><strong>imageSize</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code>, optional) – Size (units unknown) of image of the graph to output. 300 by default. Increase this if node labels are cut off.</p></li>
+<li><p><strong>showGraph</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code>, optional) – Whether or not to open a browser and display the interactive graph that was created. Defaults to <code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+<li><p><strong>outputImage</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code>, optional) – Whether or not to export an image of the graph. Defaults to <code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="edmlib.classCorrelationData.outputCliqueDistribution">
+<code class="sig-prename descclassname">edmlib.classCorrelationData.</code><code class="sig-name descname">outputCliqueDistribution</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">minCorr=None</em>, <em class="sig-param">countDuplicates=False</em>, <em class="sig-param">makeHistogram=False</em>, <em class="sig-param">fileName='cliqueHistogram'</em>, <em class="sig-param">graphTitle='Class Correlation Cliques'</em>, <em class="sig-param">logScale=False</em><span class="sig-paren">)</span><a class="headerlink" href="#edmlib.classCorrelationData.outputCliqueDistribution" title="Permalink to this definition">¶</a></dt>
+<dd><p>Outputs the clique distribution from the given correlation data. Prints to console by default, but can also optionally export a histogram.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>minCorr</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code> or <code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code>, optional) – Minimum correlation to consider a correlation an edge on the graph. ‘None’, or ignored, by default.</p></li>
+<li><p><strong>countDuplicates</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code>, optional) – Whether or not to count smaller sub-cliques of larger cliques as cliques themselves. <code class="xref py py-obj docutils literal notranslate"><span class="pre">False</span></code> by default.</p></li>
+<li><p><strong>makeHistogram</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code>, optional) – Whether or not to generate a histogram. False by default.</p></li>
+<li><p><strong>fileName</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>, optional) – File name to give exported histogram files. ‘cliqueHistogram’ by default.</p></li>
+<li><p><strong>graphTitle</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>, optional) – Title displayed on the histogram. ‘Class Correlation Cliques’ by default.</p></li>
+<li><p><strong>logScale</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code>, optional) – Whether or not to output graph in Log 10 scale on the y-axis. Defaults to <code class="xref py py-obj docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="id5">
+<h4>Logging / Troubleshooting<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
+<dl class="function">
+<dt id="edmlib.classCorrelationData.printClassesUsed">
+<code class="sig-prename descclassname">edmlib.classCorrelationData.</code><code class="sig-name descname">printClassesUsed</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#edmlib.classCorrelationData.printClassesUsed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prints to console the classes included in the correlations.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="edmlib.classCorrelationData.printMajors">
+<code class="sig-prename descclassname">edmlib.classCorrelationData.</code><code class="sig-name descname">printMajors</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#edmlib.classCorrelationData.printMajors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prints to console the majors of the classes present in the correlational data.</p>
+<div class="alert alert-info">
+<p class="admonition-title">Note</p>
+<p>The ‘classDept’ column as set by <code class="xref py py-obj docutils literal notranslate"><span class="pre">defineWorkingColumns</span></code> must have been defined in your dataset to print majors.</p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="edmlib.classCorrelationData.printEntryCount">
+<code class="sig-prename descclassname">edmlib.classCorrelationData.</code><code class="sig-name descname">printEntryCount</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#edmlib.classCorrelationData.printEntryCount" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prints to console the number of entries (rows) in the current dataset.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="edmlib.classCorrelationData.printFirstXRows">
+<code class="sig-prename descclassname">edmlib.classCorrelationData.</code><code class="sig-name descname">printFirstXRows</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">rows</em><span class="sig-paren">)</span><a class="headerlink" href="#edmlib.classCorrelationData.printFirstXRows" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prints to console the first X number of rows from the dataset.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>rows</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code>) – Number of rows to print from the dataset.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+              
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="commonUses.html" title="previous page">Common Usage Examples</a>
+    <a class='right-next' id="next-link" href="../edmprogram/index.html" title="next page">EDM Program Documentation</a>
+
+              </div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+
+    <script src="../_static/js/index.js"></script>
+    <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    <p>
+          &copy; Copyright 2020, Michael Riad Zaky.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

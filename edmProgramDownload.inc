@@ -1,0 +1,2 @@
+* Program (macOS) - :download:`edmProgram Download </edmProgram.zip>` *Last updated on 8/17/2020*
+* Program (Windows x64) - :download:`edmProgram Download </edmProgram.exe>` *Last updated on 8/30/2020*
